@@ -1,0 +1,34 @@
+<html>
+<head>
+<script language="JavaScript1.2">
+<!--
+   function KeyPress(e,element)
+   {
+      var kk = navigator.appName == 'Netscape' ? e.which : e.keyCode;
+      if (kk == 13)
+      {
+         //document.keypressform.elements[element].focus();
+		 document.getElementById(element).focus();
+         return false
+      }
+      return true
+   }
+//-->
+</script>
+</head>
+
+<body onload="document.keypressform.textarea.focus();">
+
+<form name="keypressform">
+   <fieldset>
+   <legend>Отлавливаем нажатие клавиши Enter</legend>
+   <textarea name="textarea" onKeyPress="return KeyPress(event, 2);"></textarea><br>
+   <input type="text" name="textfield" onKeyPress="return KeyPress(event, 3);"><br>
+   <input type="text" name="textfield2" onKeyPress="return KeyPress(event, 4);"><br>
+   <input type="text" id=2  name="textfield3" onKeyPress="return KeyPress(event, 5);"><br>
+   <input type="submit"  name="submitbutton">
+   </fieldset>
+</form>
+
+</body>
+</html>
